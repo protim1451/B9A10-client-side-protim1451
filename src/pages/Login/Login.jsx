@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 import SocialLogin from "./SocialLogin";
+import useAuth from "../../Hook/useAuth";
 
 
 const Login = () => {
@@ -34,7 +35,7 @@ const Login = () => {
     };
 
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser } = useAuth();
 
     return (
         <div>

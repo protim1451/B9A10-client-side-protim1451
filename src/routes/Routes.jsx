@@ -7,6 +7,9 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import AddTouristSpot from "../pages/AddTouristSpot/AddTouristSpot";
+import Mylist from "../pages/MyList/Mylist";
 
   const router = createBrowserRouter([
     {
@@ -25,6 +28,18 @@ import Register from "../pages/Register/Register";
         {
             path: '/register',
             element: <Register></Register>,
+        },
+        {
+            path: '/addspot',
+            element: <PrivateRoute>
+                <AddTouristSpot></AddTouristSpot>
+            </PrivateRoute>,
+        },
+        {
+            path: '/mylist',
+            element: <PrivateRoute>
+                <Mylist></Mylist>
+            </PrivateRoute>,
         },
       ],
     },

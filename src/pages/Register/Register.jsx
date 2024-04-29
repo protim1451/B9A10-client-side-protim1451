@@ -7,11 +7,12 @@ import { useLocation } from 'react-router-dom';
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import useAuth from "../../Hook/useAuth";
 
 
 const Register = () => {
 
-    const {createUser, logOut} = useContext(AuthContext);
+    const {createUser, logOut} = useAuth();
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();

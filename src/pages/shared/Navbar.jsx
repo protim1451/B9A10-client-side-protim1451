@@ -1,12 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../Hook/useAuth";
+import { useEffect, useState } from "react";
+import './Navbar.css';
 
 const Navbar = () => {
+    const { user, logOut } = useAuth();
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        setCurrentUser(user);
+    }, [user]);
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/spot'>All Tourist Spot</NavLink></li>
-        <li><NavLink to='/login'>Login</NavLink></li>
-    </>
+        <li><NavLink to='/addspot'>Add Tourist Spot</NavLink></li>
+        <li><NavLink to='/mylist'>My List</NavLink></li>
+    </>;
 
     return (
         <div>
@@ -27,8 +37,18 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/login' className="btn">Login</Link>
+                <div className="navbar-end relative">
+                    {currentUser ? (
+                        <div className="profile-wrapper">
+                            <img className="rounded-full w-10 h-10 cursor-pointer" src={currentUser.photoURL} alt={currentUser.displayName} />
+                            <span className="profile-name">{currentUser.displayName}</span>
+                        </div>
+                    ) : null}
+                    {user ? (
+                        <button onClick={logOut} className="btn">Logout</button>
+                    ) : (
+                        <Link to='/login' className="btn">Login</Link>
+                    )}
                 </div>
             </div>
         </div>
