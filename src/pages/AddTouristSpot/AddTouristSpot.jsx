@@ -171,7 +171,7 @@ const AddTouristSpot = () => {
                 {/* Add more input fields as needed */}
                 <button
                     type="submit"
-                    className="bg-blue-500 btn-block text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+                    className="bg-teal-300 btn-block text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
                 >
                     Add Tourist Spot
                 </button>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const UserProfile = () => {
@@ -34,6 +35,7 @@ const UserProfile = () => {
 
   return (
     <div className="flex justify-center">
+      <Helmet>VoyageVista | Profile</Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gray-100 p-8 rounded-lg shadow-lg">
         <div>
           <h2 className="text-2xl font-bold mb-4">User Profile</h2>
@@ -70,7 +72,7 @@ const UserProfile = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+                className="bg-teal-300 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
               >
                 {loading ? "Updating..." : "Update Profile"}
               </button>
@@ -78,7 +80,7 @@ const UserProfile = () => {
           ) : (
             <button
               onClick={toggleEditing}
-              className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
+              className="bg-teal-300 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
             >
               Edit Profile
             </button>

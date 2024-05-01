@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,6 +33,7 @@ const TouristSpotDetails = () => {
 
     return (
         <div>
+            <Helmet>VoyageVista | Details</Helmet>
             <h2 className="text-3xl font-bold text-center p-5 lg:p-10">Tourist Spot Details</h2>
             {spotDetails ? (
                 <div>

@@ -8,6 +8,7 @@ import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import useAuth from "../../Hook/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -93,6 +94,7 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>Register</Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">

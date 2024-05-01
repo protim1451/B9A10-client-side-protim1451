@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../Hook/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -39,6 +40,7 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>Login</Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { Helmet } from "react-helmet-async";
 
 const Mylist = () => {
     const { user } = useContext(AuthContext);
@@ -65,6 +66,7 @@ const Mylist = () => {
     }
     return (
         <div className="container mx-auto">
+            <Helmet>VoyageVista | My List</Helmet>
             <h2 className="text-3xl font-bold mb-4 text-center">My Added Spot List</h2>
             <table className="table-auto w-full">
                 <thead>
