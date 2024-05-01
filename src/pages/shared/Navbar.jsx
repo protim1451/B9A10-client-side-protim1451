@@ -13,9 +13,10 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/spot'>All Tourist Spot</NavLink></li>
         <li><NavLink to='/addspot'>Add Tourist Spot</NavLink></li>
         <li><NavLink to='/mylist'>My List</NavLink></li>
+        <li><NavLink to='/allspots'>All Tourist Spots</NavLink></li>
+        <li><NavLink to='/profile'>User Profile</NavLink></li>
     </>;
 
     return (
@@ -40,8 +41,8 @@ const Navbar = () => {
                 <div className="navbar-end relative">
                     {currentUser ? (
                         <div className="profile-wrapper">
-                            <img className="rounded-full w-10 h-10 cursor-pointer" src={currentUser.photoURL} alt={currentUser.displayName} />
                             <span className="profile-name">{currentUser.displayName}</span>
+                            <img className="rounded-full w-10 h-10 cursor-pointer" src={currentUser.photoURL} alt={currentUser.displayName} />
                         </div>
                     ) : null}
                     {user ? (
