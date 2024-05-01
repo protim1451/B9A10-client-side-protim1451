@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-
+import Swal from 'sweetalert2';
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const Mylist = () => {
@@ -31,6 +31,38 @@ const Mylist = () => {
         fetchUserSpots();
     }, [user]);
 
+    const handleDeleteSpot = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this spot!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:3000/spots/${id}`, {
+                    method: 'DELETE',
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        console.log('deleted');
+                        const remainingUserSpots = 
+                        userSpots.filter(userSpot => 
+                            userSpot._id !== id);
+                        setUserSpots(remainingUserSpots);
+                    }
+                })
+                Swal.fire(
+                    'Deleted!',
+                    'Your spot has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
     return (
         <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">My Added Spot List</h2>

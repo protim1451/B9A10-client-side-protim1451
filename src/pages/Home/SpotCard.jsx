@@ -26,9 +26,9 @@ const SpotCard = ({ spot, userName, userEmail }) => {
                         <Link to={`/allspots/${_id}`} className="text-blue-600 font-bold">  Read More...</Link>
                     </p>
                     <div className="card-actions justify-end">
-                        <div className="badge badge-outline">{averageCost}</div>
-                        <div className="badge badge-outline">{travelTime}</div>
-                        <div className="badge badge-outline">{totalVisitorsPerYear}</div>
+                        <div className="badge badge-outline">Avg. Cost:{averageCost}</div>
+                        <div className="badge badge-outline">Travel Time:{travelTime}</div>
+                        <div className="badge badge-outline">Visitor/Year:{totalVisitorsPerYear}</div>
                     </div>
                     <div className="card-body">
                         {/* Existing card body content */}
