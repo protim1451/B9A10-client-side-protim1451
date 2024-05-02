@@ -12,7 +12,7 @@ const CountriesSection = () => {
 
     const fetchCountries = async () => {
         try {
-            const response = await axios.get('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/CountryCollection');
+            const response = await axios.get('https://b9-a10-server-side-protim1451.vercel.app/CountryCollection');
             setCountries(response.data);
         } catch (error) {
             console.error('Error fetching countries:', error);

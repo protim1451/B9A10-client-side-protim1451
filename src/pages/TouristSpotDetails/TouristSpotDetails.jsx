@@ -17,7 +17,7 @@ const TouristSpotDetails = () => {
     useEffect(() => {
         const fetchSpotDetails = async () => {
             try {
-                const response = await fetch(`https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots/${id}`);
+                const response = await fetch(`https://b9-a10-server-side-protim1451.vercel.app/spots/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch spot details');
                 }

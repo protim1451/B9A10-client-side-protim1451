@@ -52,7 +52,7 @@ const Register = () => {
                 console.log(result.user);
                 const createdAt = result.user?.metadata.creationTime;
                 const user = {email, createdAt: createdAt};
-                fetch('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/user',{
+                fetch('https://b9-a10-server-side-protim1451.vercel.app/user',{
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

@@ -23,7 +23,7 @@ import UserProfile from "../pages/UserProfile/UserProfile";
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots'),
+            loader: () => fetch('https://b9-a10-server-side-protim1451.vercel.app/spots'),
         },
         {
             path: '/login',
@@ -54,7 +54,7 @@ import UserProfile from "../pages/UserProfile/UserProfile";
           element: <PrivateRoute>
             <TouristSpotDetail></TouristSpotDetail>
           </PrivateRoute>,
-           loader: ({params}) => fetch(`https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots/${params.id}`),
+           loader: ({params}) => fetch(`https://b9-a10-server-side-protim1451.vercel.app/spots/${params.id}`),
         },
         {
           path: '/profile',
