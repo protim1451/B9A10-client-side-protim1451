@@ -6,6 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const [currentUser, setCurrentUser] = useState(null);
+    const [darkTheme, setDarkTheme] = useState(false);
 
     useEffect(() => {
         setCurrentUser(user);
@@ -19,9 +20,13 @@ const Navbar = () => {
         <li><NavLink to='/profile'>User Profile</NavLink></li>
     </>;
 
+    const toggleTheme = () => {
+        setDarkTheme(prevTheme => !prevTheme);
+    };
+
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className={`navbar ${darkTheme ? 'dark' : 'light'}`}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +36,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">VoyageVista</a>
+                    <a className="btn btn-ghost text-xl font-bold bg-teal-200">VoyageVista</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-2">
@@ -45,11 +50,14 @@ const Navbar = () => {
                             <img className="rounded-full w-10 h-10 cursor-pointer" src={currentUser.photoURL} alt={currentUser.displayName} />
                         </div>
                     ) : null}
-                    {user ? (
-                        <button onClick={logOut} className="btn bg-red-400">Logout</button>
-                    ) : (
-                        <Link to='/login' className="btn bg-teal-300">Login</Link>
-                    )}
+                    <div className="flex items-center">
+                        {user ? (
+                            <button onClick={logOut} className="btn bg-slate-300">Logout</button>
+                        ) : (
+                            <Link to='/login' className="btn bg-teal-300">Login</Link>
+                        )}
+                        <button onClick={toggleTheme} className="btn bg-yellow-300 btn-circle p-1">Toggle Theme</button>
+                    </div>
                 </div>
             </div>
         </div>

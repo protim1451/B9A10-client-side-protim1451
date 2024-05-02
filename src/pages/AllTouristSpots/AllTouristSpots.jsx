@@ -10,7 +10,7 @@ const AllTouristSpots = () => {
         // Fetch data from your backend server
         const fetchSpots = async () => {
             try {
-                const response = await fetch('http://localhost:3000/spots');
+                const response = await fetch('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots');
                 if (response.ok) {
                     const data = await response.json();
                     setSpots(data); // Update the state with fetched data

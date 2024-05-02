@@ -16,7 +16,7 @@ const Mylist = () => {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:3000/userSpots?userEmail=${user.email}`); // Modify API endpoint to filter by user email
+                const response = await fetch(`https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/userSpots?userEmail=${user.email}`); // Modify API endpoint to filter by user email
                 if (!response.ok) {
                     throw new Error('Failed to fetch user spots');
                 }
@@ -43,7 +43,7 @@ const Mylist = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/spots/${id}`, {
+                fetch(`https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots/${id}`, {
                     method: 'DELETE',
                 })
                 .then(res => res.json())

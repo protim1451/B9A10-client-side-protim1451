@@ -50,7 +50,7 @@ const AddTouristSpot = () => {
     const submitFormDataToBackend = async (formData) => {
         try {
             // Make a POST request to your backend server
-            const response = await fetch('http://localhost:3000/spots', {
+            const response = await fetch('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

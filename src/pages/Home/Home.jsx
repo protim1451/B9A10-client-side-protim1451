@@ -3,6 +3,7 @@ import SpotCard from "./SpotCard";
 import Banner from "./Banner";
 import CountriesSection from "./CountiresSection";
 import TravelTipsSection from "./TravelTipsSection";
+import PopularDestinations from "./PopularDestinations";
 
 const Home = () => {
 
@@ -98,6 +99,7 @@ const Home = () => {
             </div>
             <CountriesSection countries={countries} />
             <TravelTipsSection tips={tipsData} />
+            <PopularDestinations></PopularDestinations>
         </div>
     );
 };

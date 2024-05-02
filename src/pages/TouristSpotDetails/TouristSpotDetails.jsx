@@ -17,7 +17,7 @@ const TouristSpotDetails = () => {
     useEffect(() => {
         const fetchSpotDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/spots/${id}`);
+                const response = await fetch(`https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/spots/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch spot details');
                 }
@@ -50,7 +50,7 @@ const TouristSpotDetails = () => {
                             <p className="font-bold">Location: <span className="font-normal">{spotDetails.location}</span></p>
                             <p className="font-bold">Country: <span className="font-normal">{spotDetails.countryName}</span></p>
                             <div className="card-actions justify-end">
-                                <button onClick={handleAddToWishlist} className="btn btn-primary">Add To Wishlist</button>
+                                <button onClick={handleAddToWishlist} className="btn btn-primary bg-teal-300">Add To Wishlist</button>
                             </div>
                         </div>
                     </div>

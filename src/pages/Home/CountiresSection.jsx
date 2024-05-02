@@ -12,7 +12,7 @@ const CountriesSection = () => {
 
     const fetchCountries = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/CountryCollection');
+            const response = await axios.get('https://b9-a10-server-side-protim1451-kxey2ntu9-partha-s-projects.vercel.app/CountryCollection');
             setCountries(response.data);
         } catch (error) {
             console.error('Error fetching countries:', error);
@@ -24,11 +24,11 @@ const CountriesSection = () => {
             <h2 className="text-3xl font-bold mb-4 text-center">Explore Countries</h2>
             <div className="grid grid-cols-3 gap-6">
                 {countries.map(country => (
-                    <Reveal key={country._id} cascade triggerOnce>
+                    <Reveal className='bg-teal-100' key={country._id} cascade triggerOnce>
                         <Link
                             to={{
                                 pathname: '/allspots',
-                                state: { selectedCountry: country.name } // Pass selected country as state
+                                state: { selectedCountry: country.name } 
                             }}
                             key={country._id}
                         >
