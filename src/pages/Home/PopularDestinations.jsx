@@ -1,7 +1,6 @@
 import React from "react";
 import './PpularDestinations.css'
 
-// Define fake JSON data for popular destinations
 const popularDestinationsData = [
     {
         id: 1,

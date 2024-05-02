@@ -17,17 +17,17 @@ const FirebaseProvider = ({ children }) => {
         try {
             const cred = await createUserWithEmailAndPassword(auth, email, password);
             await updateProfile(cred.user, {
-                displayName: name || cred.user.displayName || null, // Set display name to provided name, user's existing display name, or null
-                photoURL: photoURL || null, // Set photo URL to provided URL or null
+                displayName: name || cred.user.displayName || null, 
+                photoURL: photoURL || null, 
             });
-            // User creation and profile update successful
+            
             setLoading(false);
             return cred.user;
         } catch (error) {
-            // Handle errors
+            
             console.error('Error creating user:', error.message);
             setLoading(false);
-            throw error; // Rethrow the error for further handling
+            throw error; 
         }
     }
 

@@ -9,8 +9,7 @@ const TouristSpotDetails = () => {
     const [spotDetails, setSpotDetails] = useState(null);
 
     const handleAddToWishlist = () => {
-        // Perform the necessary action to add spot to wishlist
-        // For demonstration, let's just display a toast message
+        
         toast.success('Spot added to wishlist!');
     };
 
@@ -37,11 +36,6 @@ const TouristSpotDetails = () => {
             <h2 className="text-3xl font-bold text-center p-5 lg:p-10">Tourist Spot Details</h2>
             {spotDetails ? (
                 <div>
-                    {/* <h3>{spotDetails.touristSpotName}</h3>
-                    <p>Country: {spotDetails.countryName}</p>
-                    <p>Location: {spotDetails.location}</p>
-                    <p>Description: {spotDetails.shortDescription}</p> */}
-                    {/* Add more spot details as needed */}
                     <div className="card glass">
                         <figure><img className="w-full object-cover" src={spotDetails.image} alt="car!" /></figure>
                         <div className="card-body">

@@ -7,13 +7,13 @@ const AllTouristSpots = () => {
     const [selectedCountry, setSelectedCountry] = useState('');
 
     useEffect(() => {
-        // Fetch data from your backend server
+        
         const fetchSpots = async () => {
             try {
                 const response = await fetch('https://b9-a10-server-side-protim1451.vercel.app/spots');
                 if (response.ok) {
                     const data = await response.json();
-                    setSpots(data); // Update the state with fetched data
+                    setSpots(data); 
                 } else {
                     console.error('Failed to fetch spots');
                 }
@@ -22,8 +22,8 @@ const AllTouristSpots = () => {
             }
         };
 
-        fetchSpots(); // Call the fetchSpots function when the component mounts
-    }, []); // Empty dependency array ensures the effect runs only once after initial render
+        fetchSpots(); 
+    }, []); 
 
     // Filter spots based on the selected country
     const filteredSpots = selectedCountry

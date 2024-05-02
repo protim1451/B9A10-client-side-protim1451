@@ -33,8 +33,8 @@ const SpotCard = ({ spot, userName, userEmail }) => {
                             <div className="badge badge-outline">Visitor/Year:{totalVisitorsPerYear}</div>
                         </div>
                         <div className="card-body">
-                            {/* Existing card body content */}
-                            <p>Added By: <small>{userName} ({userEmail})</small></p> {/* Add user name and email */}
+                            
+                            <p>Added By: <small>{userName} ({userEmail})</small></p> 
                         </div>
                         <div className="">
                             <Link to={`/allspots/${_id}`}>

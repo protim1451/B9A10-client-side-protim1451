@@ -7,7 +7,7 @@ import { AuthContext } from '../../FirebaseProvider/FirebaseProvider';
 const AddTouristSpot = () => {
     const { user } = useContext(AuthContext);
 
-    // State variables to hold form data
+    
     const [formData, setFormData] = useState({
         image: '',
         touristSpotName: '',
@@ -23,7 +23,7 @@ const AddTouristSpot = () => {
         userEmail: user ? user.email : ''
     });
     console.log(formData);
-    // Handler for form input changes
+   
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -32,12 +32,10 @@ const AddTouristSpot = () => {
         });
     };
 
-    // Handler for form submission
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Call a function to submit the form data to the backend
-        // This function will send the data to your backend server to be saved in MongoDB
-        // You'll need to implement this function using Axios or Fetch
+        
         const success = await submitFormDataToBackend(formData);
         if (success) {
             toast.success('Tourist spot added successfully');
@@ -49,7 +47,7 @@ const AddTouristSpot = () => {
     // Function to submit form data to the backend
     const submitFormDataToBackend = async (formData) => {
         try {
-            // Make a POST request to your backend server
+           
             const response = await fetch('https://b9-a10-server-side-protim1451.vercel.app/spots', {
                 method: 'POST',
                 headers: {
@@ -57,11 +55,11 @@ const AddTouristSpot = () => {
                 },
                 body: JSON.stringify(formData)
             });
-            // Handle response from the server
+           
             return response.ok;
         } catch (error) {
             console.error('Error:', error);
-            // Handle error
+           
             return false;
         }
     };
@@ -168,7 +166,6 @@ const AddTouristSpot = () => {
                         </select>
                     </label>
                 </div>
-                {/* Add more input fields as needed */}
                 <button
                     type="submit"
                     className="bg-teal-300 btn-block text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
